@@ -7,6 +7,7 @@ name = "pypi"
 aio-pika = "*"
 
 [dev-packages]
+black = "*"
 
 [requires]
 python_version = "3.13"

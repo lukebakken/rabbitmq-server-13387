@@ -28,7 +28,7 @@ async def on_message(message, channel) -> None:
         # Send incorrect message to force the channel error
         await channel.default_exchange.publish(
             aio_pika.Message(
-                body=b'outgoing message',
+                body=b"outgoing message",
                 expiration=-1,
             ),
             routing_key="",
@@ -50,7 +50,7 @@ async def main() -> None:
     # Fill the queue to consume later
     for i in range(100):
         await channel.default_exchange.publish(
-            aio_pika.Message(body=b'incoming messages'),
+            aio_pika.Message(body=b"incoming messages"),
             routing_key="test-queue",
         )
 
